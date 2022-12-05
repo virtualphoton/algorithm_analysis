@@ -146,8 +146,11 @@ void Test(const size_t length, const size_t n_samples, std::ofstream& output, co
 
 int main() {
     std::ofstream output("output.txt");
+    output << "[";
     for (auto length : range(10, 2000)) {
         Test(length, 50, output, time(nullptr) + length);
     }
+    output << "]";
+    output.close();
     return 0;
 }
